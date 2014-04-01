@@ -1,0 +1,15 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+<% @users.each do |user| %>
+<%= user.name %>
+<%= user.email %>
+<%= user.phone %>
+<%= user.store_owner %><br />
+<% user.stores.each do |store| %>
+store name: <%= link_to(store.name, store_path(store)) %><br />
+<% store.products.each do |product| %>
+product name: <%= product.name %><br />
+<% end %>
+<% end %>
+<br />
+<% end %>

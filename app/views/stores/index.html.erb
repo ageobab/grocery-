@@ -1,5 +1,7 @@
 <% @stores.each do |store| %>
-store name: <%= link_to(store.name, user_store_path(store.user, store))%> <br />
+store name: <%= link_to(store.name, user_store_path(store.user, store))%> 
+store link: <%= link_to(store.name , store) %>
+<br />
 <% end %>
 all my stores <br/>
 add a store

@@ -1,10 +1,11 @@
 class StoresController < ApplicationController
 
-  before_action :ensure_user_a_store_owner!, except: [:show]
+  before_action :ensure_user_a_store_owner!, except: [:show, :index]
 
   def index
-    @user = User.find(params[:user_id])
-    @stores = @user.stores
+    # @user = User.find(params[:user_id])
+    # @stores = @user.stores
+    @stores = Store.all
   end
 
   def new
@@ -21,9 +22,10 @@ class StoresController < ApplicationController
   end
 
   def show
-    layout "consumer"
+    #layout "consumer"
     # @user = User.find(params[:user_id])
-    @store = Store.find(params[:id])
+    #@store = Store.find(params[:id])
+    @store = Store.find_by_name(params[:id])
   end
 
   def edit

@@ -13,6 +13,7 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem "devise"
+gem 'friendly_id', '~> 5.0.0'
 
 
 group :doc do
